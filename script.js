@@ -8,26 +8,29 @@ $(document).ready(function(){
     // uses searched city name to get city climate data
     function currentweather(searchValue){
         $.ajax({
-            url: weatherAPI + searchValue + "&appid=" + weatherAPIKey,
+            url: weatherAPI + searchValue + "&units=imperial&appid=" + weatherAPIKey,
             method: 'GET'
         }).then(function(response){
             console.log(response);
 
-            $(".today").html("<h1>" + response.name + "Weather details</h1>" + "Temperature" + response.main.temp);
-
+            $(".today").append("<h2>" + response.name + "Weather details</h2>" + "<p>Temperature: " + response.main.temp + "</p>");
+            $(".today").append("<p>Wind Speed: " + response.wind.speed + "</p>");
+            getUV(response.coord.lat, response.coord.lon)
         });
     }
     // grabs forcast data from api
     function getForeCast (searchValue){
         $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=" + weatherAPIKey,
+            url: "http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&units=imperial&appid=" + weatherAPIKey,
             method: 'GET'
         }).then(function(response){
             console.log(response);
+            
 
             $(".forecast").html("<p> feels like " + response.list[0].main.feels_like + "</p>");
-
-            getUV(response.coord.lat, response.coord.lon)
+            
+            
+            
         })
     }
     // uses lat and lon data to determine uv index with api data
@@ -38,7 +41,7 @@ $(document).ready(function(){
         }).then(function(response){
             console.log(response);
 
-            $(".uv").html("<p> this is the uv " + response.value + "</p>");
+            $(".today").append("<p> this is the uv " + response.value + "</p>");
         })
     }
 

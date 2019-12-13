@@ -1,0 +1,15 @@
+h1{
+    font-size: 30px;
+    font-weight: bolder;
+    width: auto ;
+    background-color: grey;
+    text-align: center;
+}
+.divider1{
+    float: left;
+
+}
+.divider2{
+    float: left;
+    margin-left: 90px;
+}
