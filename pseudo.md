@@ -36,4 +36,21 @@ create a uv function for the uv index
    make ajax call to the uv api
    append that to the search weather function
 
+   // 5 day forcast api format
+// api.openweathermap.org/data/2.5/forecast?q={city name},{country code}
+//Parameters
+// q city name and country code divided by comma, use ISO 3166 country codes
+
+// uv index api format
+// By geographic coordinates
+// API call:
+http://api.openweathermap.org/data/2.5/uvi?appid={appid}&lat={lat}&lon={lon}
+// Parameters
+// appid - personal API key
+
+// lat, lon - coordinates of the location of your interest (latitude/longitude)
+
+// Examples of API calls:
+// api.openweathermap.org/data/2.5/uvi?lat=37.75&lon=-122.37
+
 

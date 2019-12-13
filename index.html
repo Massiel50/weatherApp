@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
     <title>Weather App</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <header>Weather Dashboard</header>
+
+      <div class="row">
+        <!-- column for search button and prev search buttons -->
+        <div class="col-sm-3">
+          <input id="search-value" />
+          <button class="searchButton">search</button>
+        </div>
+        <!-- column holding dash row and 5 day forecast row -->
+        <div class="col-sm-9">
+          <!-- row for dash -->
+          <div class="row today">
+              <div class="uv"></div>
+          </div>
+          <!-- row for 5 day forecast -->
+          <div class="row"></div>
+        </div>
+      </div>
+
+      <script src="./script.js"></script>
+    </div>
+  </body>
 </html>
