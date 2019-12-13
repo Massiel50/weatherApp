@@ -13,3 +13,6 @@ h1{
     float: left;
     margin-left: 90px;
 }
+.forecast{
+    border-color: indigo;
+}
